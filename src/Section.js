@@ -1,4 +1,6 @@
 import React from 'react';
+import Card from './Card';
+
 const path = process.env.PUBLIC_URL;
 const arr = [
 	'Blizzards',
@@ -15,14 +17,7 @@ function Section() {
 	return (
 		<section className='wrap'>
 			{arr.map((data, idx) => {
-				return (
-					<article key={idx}>
-						<div className='pic'>
-							<img src={`${path}/img/${data}.jpg`} />
-						</div>
-						{data}
-					</article>
-				);
+				return <Card key={idx} path={path} data={data} />;
 			})}
 		</section>
 	);
