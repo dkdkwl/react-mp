@@ -1,4 +1,5 @@
 import React from 'react';
+const path = process.env.PUBLIC_URL;
 const arr = [
 	'Blizzards',
 	'Calm',
@@ -14,7 +15,14 @@ function Section() {
 	return (
 		<section className='wrap'>
 			{arr.map((data, idx) => {
-				return <article key={idx}>{data}</article>;
+				return (
+					<article key={idx}>
+						<div className='pic'>
+							<img src={`${path}/img/${data}.jpg`} />
+						</div>
+						{data}
+					</article>
+				);
 			})}
 		</section>
 	);
